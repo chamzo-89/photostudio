@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chamzo Photo Studio - Capture Your Moments</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Social Media Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #ff8a00, #e52e71);
+      color: white;
+      padding: 20px 0;
+    }
+
+    header nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    header nav h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    header nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #f39c12;
+    }
+
+    /* Hero Section */
+    #hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    #hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #f39c12;
+    }
+
+    #hero p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #ecf0f1;
+    }
+
+    /* About Section */
+    #about {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    #about h2 {
+      font-size: 3rem;
+      color: #ff8a00;
+      margin-bottom: 30px;
+    }
+
+    #about p {
+      font-size: 1.4rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    /* Services Section */
+    #services {
+      background-color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #services h2 {
+      font-size: 2.5rem;
+      color: #ff8a00;
+      margin-bottom: 40px;
+    }
+
+    .service-cards {
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .service-card {
+      background-color: #f7f7f7;
+      padding: 30px;
+      border-radius: 10px;
+      width: 30%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      color: #e74c3c;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      padding: 80px 20px;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+
+    #gallery h2 {
+      font-size: 2.5rem;
+      color: #ff8a00;
+      margin-bottom: 40px;
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-images img, .gallery-images video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-images {
+      width: 30%;
+      margin-bottom: 20px;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 60px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 2.5rem;
+      color: #ff8a00;
+      margin-bottom: 40px;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    #contact input, #contact textarea {
+      width: 100%;
+      max-width: 600px;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    #contact button {
+      padding: 12px 25px;
+      background-color: #ff8a00;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #contact button:hover {
+      background-color: #e52e71;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #34495e;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer .social-media {
+      margin: 30px 0;
+    }
+
+    footer .social-media a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 2rem;
+      margin: 0 20px;
+      transition: color 0.3s;
+    }
+
+    footer .social-media a:hover {
+      color: #f39c12;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      #hero h2 {
+        font-size: 2.5rem;
+      }
+
+      #hero p {
+        font-size: 1.2rem;
+      }
+
+      .service-cards {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .service-card {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .gallery-images {
+        width: 45%;
+      }
+
+      #about p {
+        font-size: 1.3rem;
+      }
+
+      #contact form {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="gallery-images">
+        <img src="images/logo.jpg" alt="Chamzo Photo Studio Logo" />
+      </div>
+      <h1>Chamzo Photo Studio</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="booking.html">Book a Session today</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Welcome to Chamzo Photo Studio</h2>
+      <p>Capture your precious moments with professional photography.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>Weddings</h3>
+        <p>Capture your love story with beautiful wedding photography.</p>
+      </div>
+      <div class="service-card">
+        <h3>Portraits</h3>
+        <p>Get stunning professional portraits that reflect your personality.</p>
+      </div>
+      <div class="service-card">
+        <h3>Events</h3>
+        <p>Photography for corporate events, parties, and more!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery-container">
+      <div class="gallery-images">
+        <img src="images/e5.jpg" alt="Wedding Photography" />
+      </div>
+      <div class="gallery-images">
+        <img src="images/e2.jpg" alt="Portrait Photography" />
+      </div>
+      <div class="gallery-images">
+        <img src="images/e1.jpg" alt="Event Photography" />
+      </div>
+      <div class="gallery-images">
+        <video controls>
+          <source src="https://media.istockphoto.com/id/1997990231/video/couple-flower-confetti-and-outdoor-wedding-with-event-walk-and-happy-laugh-in-nature-black.mp4?s=mp4-640x640-is&k=20&c=geGdvaLdjzUBYKLr7CTxcIkkIQgtoiL5MypmN-b8xrc=" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="gallery-images">
+        <video controls>
+          <source src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/EyvF0jkPg/videoblocks-happy-european-girl-holding-birthday-cake-making-a-wish-and-blowing-multiethnic-friends-sing-at-fun-party-slow-motion_boc0yuskm__a430ddd90bde7926ff90e3b0cb660bc9__P360.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a professional photography studio that specializes in capturing life's most precious moments. With years of experience, our photographers ensure your memories are immortalized in high-quality images.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+     <button type="sutbmit">Send Message</button>
+    </form> 
+  </section>
+
+  <footer>
+    <p><strong>Phone:</strong> <a href="tel:+1234567890">+254 740555770</a></p>
+    <p>&copy; 2025 Chamzo Photo Studio. All rights reserved.</p>
+    <div class="social-media">
+      <a href="https://facebook.com/@lucy.ndai.7" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/chamzophotostudio" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/+254740555770" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com/@ndailucy2804" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/ndai_lucy" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com/@BintiNdaz" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
